@@ -2,46 +2,106 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Shield, Lock, Eye, UserCheck } from "lucide-react";
+import { useEffect, useState } from "react";
+import heroImage from "@/assets/hero-service-team.jpg";
 
 const PrivacyPolicy = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
       
-      {/* Hero Section */}
-      <div className="hero bg-base-200 min-h-[60vh] pt-20">
-        <div className="hero-content text-center">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-foreground/10 mb-6">
-              <Shield className="w-10 h-10 text-foreground" />
+      {/* Full-Screen Parallax Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Parallax Background */}
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="absolute inset-0 scale-110"
+            style={{ 
+              transform: `translateY(${scrollY * 0.4}px)`,
+              transition: 'transform 0.1s ease-out'
+            }}
+          >
+            <img 
+              src={heroImage} 
+              alt="Professional service team" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70" />
+          <div 
+            className="absolute inset-0 animate-gradient"
+            style={{
+              background: 'radial-gradient(circle at 30% 40%, oklch(var(--primary) / 0.2), transparent 60%)',
+              backgroundSize: '200% 200%',
+            }}
+          />
+        </div>
+
+        {/* Floating orbs */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div 
+            className="absolute top-32 left-20 w-64 h-64 rounded-full blur-3xl animate-float"
+            style={{ 
+              background: 'radial-gradient(circle, oklch(var(--primary) / 0.3), transparent)',
+              animationDuration: '9s'
+            }} 
+          />
+          <div 
+            className="absolute bottom-32 right-20 w-80 h-80 rounded-full blur-3xl animate-float"
+            style={{ 
+              background: 'radial-gradient(circle, oklch(var(--chart-4) / 0.25), transparent)',
+              animationDelay: '2s',
+              animationDuration: '11s'
+            }} 
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-20 container mx-auto px-6 py-20 animate-fade-in">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-24 h-24 rounded-full glass-strong mb-8 animate-pulse-glow">
+              <Shield className="w-12 h-12 text-primary" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-black mb-6">
-              Your Privacy Matters
+            
+            <h1 className="text-5xl md:text-7xl font-black mb-8 text-white animate-fade-in-up">
+              Your <span className="gradient-text-gold">Privacy</span> Matters
             </h1>
-            <p className="py-6 text-xl text-muted-foreground max-w-2xl mx-auto">
+            
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto animate-fade-in-up delay-200">
               We protect your data with the same care we bring to your events
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-              <div className="flex flex-col items-center gap-2">
-                <Lock className="w-6 h-6 text-foreground" />
-                <span className="text-sm font-medium">Encrypted</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Shield className="w-6 h-6 text-foreground" />
-                <span className="text-sm font-medium">Secure</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Eye className="w-6 h-6 text-foreground" />
-                <span className="text-sm font-medium">Transparent</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <UserCheck className="w-6 h-6 text-foreground" />
-                <span className="text-sm font-medium">Compliant</span>
-              </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 animate-fade-in-up delay-300">
+              {[
+                { icon: Lock, text: "Encrypted", color: "text-primary" },
+                { icon: Shield, text: "Secure", color: "text-chart-4" },
+                { icon: Eye, text: "Transparent", color: "text-primary" },
+                { icon: UserCheck, text: "Compliant", color: "text-chart-4" },
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex flex-col items-center gap-3 group"
+                >
+                  <div className="w-16 h-16 rounded-xl glass-strong flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className={`w-8 h-8 ${item.color}`} />
+                  </div>
+                  <span className="text-white font-semibold text-sm">{item.text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <main className="container mx-auto px-6 py-16">
         <Card className="max-w-4xl mx-auto p-8 md:p-12 shadow-xl">

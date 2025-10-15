@@ -2,26 +2,81 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { GradientText } from "@/components/ui/gradient-text";
 import { MessageCircle, CheckCircle, Award, Clock, Users } from "lucide-react";
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-villa-event.jpg";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated mesh gradient overlay */}
-      <div className="absolute inset-0 mesh-gradient animate-gradient pointer-events-none z-10" />
-      
-      {/* Background image with overlay */}
+      {/* Parallax Background Layers */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Luxury villa service" 
-          className="w-full h-full object-cover"
+        {/* Base image layer with parallax */}
+        <div 
+          className="absolute inset-0 scale-110"
+          style={{ 
+            transform: `translateY(${scrollY * 0.5}px)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
+          <img 
+            src={heroImage} 
+            alt="Luxury villa service in Bali" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        {/* Dark overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70" />
+        
+        {/* Animated mesh gradient overlay */}
+        <div 
+          className="absolute inset-0 animate-gradient pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle at 20% 50%, oklch(var(--primary) / 0.15), transparent 50%), radial-gradient(circle at 80% 80%, oklch(var(--chart-4) / 0.15), transparent 50%)',
+            backgroundSize: '200% 200%',
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60" />
+      </div>
+      
+      {/* Floating animated orbs */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div 
+          className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-float"
+          style={{ 
+            background: 'radial-gradient(circle, oklch(var(--primary) / 0.3), transparent)',
+            animationDelay: '0s',
+            animationDuration: '8s'
+          }} 
+        />
+        <div 
+          className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-float"
+          style={{ 
+            background: 'radial-gradient(circle, oklch(var(--chart-4) / 0.25), transparent)',
+            animationDelay: '2s',
+            animationDuration: '10s'
+          }} 
+        />
+        <div 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-pulse-glow"
+          style={{ 
+            background: 'radial-gradient(circle, oklch(var(--primary) / 0.1), transparent)',
+            animationDuration: '6s'
+          }} 
+        />
       </div>
       
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 py-20">
+      <div className="relative z-20 container mx-auto px-4 py-20 animate-fade-in">
         <div className="max-w-5xl mx-auto">
           <GlassCard variant="strong" className="p-8 md:p-12 lg:p-16">
             {/* Badge */}
@@ -95,10 +150,6 @@ const Hero = () => {
           </GlassCard>
         </div>
       </div>
-      
-      {/* Decorative gradient orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-chart-4/20 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
     </section>
   );
 };
