@@ -35,44 +35,8 @@ const Hero = () => {
           />
         </div>
         
-        {/* Dark overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70" />
-        
-        {/* Animated mesh gradient overlay */}
-        <div 
-          className="absolute inset-0 animate-gradient pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle at 20% 50%, oklch(var(--primary) / 0.15), transparent 50%), radial-gradient(circle at 80% 80%, oklch(var(--chart-4) / 0.15), transparent 50%)',
-            backgroundSize: '200% 200%',
-          }}
-        />
-      </div>
-      
-      {/* Floating animated orbs */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div 
-          className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-float"
-          style={{ 
-            background: 'radial-gradient(circle, oklch(var(--primary) / 0.3), transparent)',
-            animationDelay: '0s',
-            animationDuration: '8s'
-          }} 
-        />
-        <div 
-          className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-float"
-          style={{ 
-            background: 'radial-gradient(circle, oklch(var(--chart-4) / 0.25), transparent)',
-            animationDelay: '2s',
-            animationDuration: '10s'
-          }} 
-        />
-        <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl animate-pulse-glow"
-          style={{ 
-            background: 'radial-gradient(circle, oklch(var(--primary) / 0.1), transparent)',
-            animationDuration: '6s'
-          }} 
-        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/70" />
       </div>
       
       {/* Content */}

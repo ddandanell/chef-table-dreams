@@ -37,33 +37,8 @@ const TermsOfService = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70" />
-          <div 
-            className="absolute inset-0 animate-gradient"
-            style={{
-              background: 'radial-gradient(circle at 70% 50%, oklch(var(--chart-4) / 0.2), transparent 60%)',
-              backgroundSize: '200% 200%',
-            }}
-          />
-        </div>
-
-        {/* Floating orbs */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div 
-            className="absolute top-24 right-24 w-72 h-72 rounded-full blur-3xl animate-float"
-            style={{ 
-              background: 'radial-gradient(circle, oklch(var(--chart-4) / 0.3), transparent)',
-              animationDuration: '10s'
-            }} 
-          />
-          <div 
-            className="absolute bottom-24 left-24 w-80 h-80 rounded-full blur-3xl animate-float"
-            style={{ 
-              background: 'radial-gradient(circle, oklch(var(--primary) / 0.25), transparent)',
-              animationDelay: '3s',
-              animationDuration: '12s'
-            }} 
-          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/70" />
         </div>
 
         {/* Content */}

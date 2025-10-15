@@ -37,33 +37,8 @@ const PrivacyPolicy = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70" />
-          <div 
-            className="absolute inset-0 animate-gradient"
-            style={{
-              background: 'radial-gradient(circle at 30% 40%, oklch(var(--primary) / 0.2), transparent 60%)',
-              backgroundSize: '200% 200%',
-            }}
-          />
-        </div>
-
-        {/* Floating orbs */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div 
-            className="absolute top-32 left-20 w-64 h-64 rounded-full blur-3xl animate-float"
-            style={{ 
-              background: 'radial-gradient(circle, oklch(var(--primary) / 0.3), transparent)',
-              animationDuration: '9s'
-            }} 
-          />
-          <div 
-            className="absolute bottom-32 right-20 w-80 h-80 rounded-full blur-3xl animate-float"
-            style={{ 
-              background: 'radial-gradient(circle, oklch(var(--chart-4) / 0.25), transparent)',
-              animationDelay: '2s',
-              animationDuration: '11s'
-            }} 
-          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/70" />
         </div>
 
         {/* Content */}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChefHat, Menu, X, MessageCircle } from "lucide-react";
@@ -6,16 +6,7 @@ import { cn } from "@/lib/utils";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const navLinks = [
     { name: "Services", href: "#services" },
@@ -33,12 +24,7 @@ const Header = () => {
 
   return (
     <header 
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled 
-          ? "glass shadow-lg py-3" 
-          : "bg-transparent py-6"
-      )}
+      className="fixed top-0 left-0 right-0 z-50 bg-background shadow-md transition-all duration-500 py-4 border-b border-border"
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
@@ -47,18 +33,10 @@ const Header = () => {
             to="/" 
             className="flex items-center space-x-3 group"
           >
-            <div className={cn(
-              "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300",
-              scrolled 
-                ? "bg-gradient-to-br from-primary to-chart-4" 
-                : "glass-subtle"
-            )}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-gradient-to-br from-primary to-chart-4">
               <ChefHat className="w-6 h-6 text-white" />
             </div>
-            <span className={cn(
-              "text-2xl font-bold transition-all duration-300",
-              scrolled ? "gradient-text-gold" : "text-white"
-            )}>
+            <span className="text-2xl font-bold gradient-text-gold">
               MyChef
             </span>
           </Link>
@@ -72,12 +50,8 @@ const Header = () => {
                 className={cn(
                   "px-4 py-2 rounded-lg font-medium transition-all duration-300 hover-underline",
                   isActive(link.href)
-                    ? scrolled 
-                      ? "text-primary" 
-                      : "text-white"
-                    : scrolled
-                    ? "text-foreground/70 hover:text-foreground"
-                    : "text-white/70 hover:text-white"
+                    ? "text-foreground" 
+                    : "text-foreground/70 hover:text-foreground"
                 )}
               >
                 {link.name}
@@ -88,24 +62,13 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button 
-              variant="outline"
-              className={cn(
-                "shine transition-all duration-300",
-                scrolled 
-                  ? "border-primary/20 hover:bg-primary/10" 
-                  : "glass-subtle border-white/30 text-white hover:bg-white/20"
-              )}
+              className="bg-white text-foreground border border-border hover:bg-white/90 transition-all duration-300"
               asChild
             >
               <a href="#services">View Services</a>
             </Button>
             <Button 
-              className={cn(
-                "shine group hover:scale-105 transition-all duration-300",
-                scrolled 
-                  ? "shadow-lg shadow-primary/20" 
-                  : "glass-strong text-white"
-              )}
+              className="bg-white text-foreground border border-border hover:bg-white/90 group hover:scale-105 transition-all duration-300"
             >
               <MessageCircle className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
               Book Now
@@ -115,16 +78,13 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={cn(
-              "md:hidden w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300",
-              scrolled ? "bg-primary/10" : "glass-subtle"
-            )}
+            className="md:hidden w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-muted/50"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className={scrolled ? "w-5 h-5" : "w-5 h-5 text-white"} />
+              <X className="w-5 h-5 text-foreground" />
             ) : (
-              <Menu className={scrolled ? "w-5 h-5" : "w-5 h-5 text-white"} />
+              <Menu className="w-5 h-5 text-foreground" />
             )}
           </button>
         </nav>
