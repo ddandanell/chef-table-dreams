@@ -7,9 +7,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">takeachef</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="relative">
+                <div className="w-8 h-8 rounded-lg bg-gradient-coral flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🍳</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-gold flex items-center justify-center">
+                  <span className="text-[8px] font-black text-white">A</span>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold">My Chef</h3>
+            </div>
             <p className="text-gray-400 mb-6">
-              Bringing restaurant magic to your table
+              Bali's Premier Hospitality Staffing Excellence
             </p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-primary transition-smooth">
@@ -72,12 +82,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-smooth">
+                <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-smooth">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-smooth">
+                <a href="/terms-of-service" className="text-gray-400 hover:text-white transition-smooth">
                   Terms of Service
                 </a>
               </li>
@@ -89,14 +99,23 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
               <li>Phone: +62 822-3756-5997</li>
-              <li>Email: info@takeachef.com</li>
+              <li>WhatsApp: +62 822-3756-5997</li>
+              <li>Email: info@mychef.in</li>
+              <li>Web: www.mychef.in</li>
               <li>Available 24/7</li>
+              <li className="pt-2">
+                <strong className="text-white">Bali Office:</strong><br />
+                Jalan Sunset Road No. 88<br />
+                Seminyak, Bali 80361<br />
+                Indonesia
+              </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Take a Chef. All rights reserved.</p>
+          <p>&copy; 2018-2025 My Chef Bali. All rights reserved.</p>
+          <p className="text-sm mt-2">Licensed & Insured Hospitality Staffing Company</p>
         </div>
       </div>
     </footer>
