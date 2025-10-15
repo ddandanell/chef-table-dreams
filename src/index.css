@@ -8,48 +8,85 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 17%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 17%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 17%;
-    --primary: 8 86% 70%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 50% 30%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 30 20% 97%;
-    --muted-foreground: 0 0% 42%;
-    --accent: 39 85% 59%;
-    --accent-foreground: 0 0% 17%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 8 86% 70%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    /* Base colors - converted from OKLCH acid theme */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 95%;
+    --popover-foreground: 0 0% 0%;
     
-    --charcoal: 0 0% 17%;
-    --coral: 8 86% 70%;
-    --gold: 39 85% 59%;
-    --navy: 210 50% 30%;
+    /* Primary - vibrant pink/magenta */
+    --primary: 331 86% 72%;
+    --primary-foreground: 331 20% 14%;
+    
+    /* Secondary - orange-yellow */
+    --secondary: 48 85% 73%;
+    --secondary-foreground: 48 15% 15%;
+    
+    /* Accent - bright lime green */
+    --accent: 123 85% 93%;
+    --accent-foreground: 123 18% 19%;
+    
+    /* Neutral - dark purple */
+    --neutral: 279 50% 21%;
+    --neutral-foreground: 279 25% 84%;
+    
+    /* Muted */
+    --muted: 0 0% 91%;
+    --muted-foreground: 0 0% 42%;
+    
+    /* Info - blue */
+    --info: 252 85% 61%;
+    --info-foreground: 252 45% 12%;
+    
+    /* Success - light green */
+    --success: 159 85% 86%;
+    --success-foreground: 159 53% 17%;
+    
+    /* Warning - light yellow */
+    --warning: 101 85% 91%;
+    --warning-foreground: 101 42% 18%;
+    
+    /* Error/Destructive - red-orange */
+    --destructive: 29 86% 65%;
+    --destructive-foreground: 29 58% 13%;
+    
+    /* UI Elements */
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 331 86% 72%;
+    --radius: 1rem;
+    
+    /* Charts */
+    --chart-1: 331 86% 72%;
+    --chart-2: 48 85% 73%;
+    --chart-3: 123 85% 93%;
+    --chart-4: 252 85% 61%;
+    --chart-5: 159 85% 86%;
+    
+    /* Custom brand colors */
+    --charcoal: 0 0% 0%;
+    --coral: 331 86% 72%;
+    --gold: 48 85% 73%;
+    --navy: 279 50% 21%;
+    --lime: 123 85% 93%;
     --whatsapp-green: 142 70% 40%;
     
-    --gradient-coral: linear-gradient(135deg, hsl(8, 86%, 70%), hsl(8, 86%, 75%));
-    --gradient-gold: linear-gradient(135deg, hsl(39, 85%, 59%), hsl(39, 85%, 65%));
-    --gradient-cta: linear-gradient(135deg, hsl(8, 86%, 70%), hsl(39, 85%, 59%));
-    --gradient-navy: linear-gradient(135deg, hsl(210, 50%, 30%), hsl(210, 50%, 40%));
+    /* Gradients */
+    --gradient-coral: linear-gradient(135deg, hsl(331, 86%, 72%), hsl(331, 86%, 80%));
+    --gradient-gold: linear-gradient(135deg, hsl(48, 85%, 73%), hsl(48, 85%, 80%));
+    --gradient-cta: linear-gradient(135deg, hsl(331, 86%, 72%), hsl(48, 85%, 73%));
+    --gradient-navy: linear-gradient(135deg, hsl(279, 50%, 21%), hsl(279, 50%, 30%));
+    --gradient-accent: linear-gradient(135deg, hsl(123, 85%, 93%), hsl(159, 85%, 86%));
     
+    /* Shadows with depth */
     --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.06);
     --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-large: 0 12px 28px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
     
+    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
