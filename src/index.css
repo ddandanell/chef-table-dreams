@@ -312,7 +312,8 @@
   
   .hover-underline::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-chart-4 scale-x-0 origin-left transition-transform duration-300;
+    @apply absolute bottom-0 left-0 w-full h-0.5 scale-x-0 origin-left transition-transform duration-300;
+    background: linear-gradient(to right, oklch(var(--primary)), oklch(var(--chart-4)));
   }
   
   .hover-underline:hover::after {
