@@ -44,7 +44,7 @@ const HowItWorks = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <p className="text-primary font-semibold mb-3 tracking-wide uppercase text-sm">Simple & Seamless</p>
+          <p className="text-foreground font-semibold mb-3 tracking-wide uppercase text-sm">Simple & Seamless</p>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             The Simple 5-Step Journey
           </h2>
@@ -70,25 +70,25 @@ const HowItWorks = () => {
               >
                 {/* Mobile/Tablet Connector */}
                 {index < steps.length - 1 && (
-                  <div className="lg:hidden absolute left-12 top-32 w-0.5 h-full bg-gradient-to-b from-primary to-primary/20" />
+                  <div className="lg:hidden absolute left-12 top-32 w-0.5 h-full bg-gradient-to-b from-foreground to-foreground/20" />
                 )}
                 
                 {/* Step Card */}
                 <div className="relative bg-card rounded-2xl p-6 shadow-soft hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-border group">
                   {/* Step Number Badge */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-coral flex items-center justify-center shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
+                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-foreground flex items-center justify-center shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-xl font-bold text-white">{step.number}</span>
                   </div>
                   
                   {/* Icon Container */}
                   <div className="mb-6 relative">
-                    <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-500 group-hover:rotate-6">
-                      <step.icon className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-foreground/10 to-foreground/5 flex items-center justify-center group-hover:from-foreground/20 group-hover:to-foreground/10 transition-all duration-500 group-hover:rotate-6">
+                      <step.icon className="w-12 h-12 text-foreground group-hover:scale-110 transition-transform duration-300" />
                     </div>
                     
                     {/* Decorative Elements */}
-                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-gradient-gold opacity-60 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-primary/30 group-hover:bg-primary/60 transition-colors" />
+                    <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-foreground/30 group-hover:bg-foreground/60 transition-colors" />
                   </div>
                   
                   {/* Content */}
@@ -108,7 +108,7 @@ const HowItWorks = () => {
                         className="flex items-center gap-2 text-xs text-muted-foreground opacity-0 animate-fade-in"
                         style={{ animationDelay: `${(index * 0.15) + (i * 0.1)}s`, animationFillMode: 'forwards' }}
                       >
-                        <Check className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                        <Check className="w-3.5 h-3.5 text-foreground flex-shrink-0" />
                         <span>{highlight}</span>
                       </div>
                     ))}
@@ -117,7 +117,7 @@ const HowItWorks = () => {
                   {/* Arrow Connector - Desktop Only */}
                   {index < steps.length - 1 && (
                     <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 z-20">
-                      <ArrowRight className="w-8 h-8 text-primary animate-pulse" />
+                      <ArrowRight className="w-8 h-8 text-foreground animate-pulse" />
                     </div>
                   )}
                 </div>
@@ -134,7 +134,7 @@ const HowItWorks = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="#services"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-coral text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-foreground text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               Request Service
               <ArrowRight className="w-5 h-5" />

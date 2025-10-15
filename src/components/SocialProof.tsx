@@ -34,7 +34,7 @@ const SocialProof = () => {
               className="text-center animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-coral mb-4 shadow-medium">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-foreground mb-4 shadow-medium">
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
               <div className="text-4xl md:text-5xl font-bold text-charcoal mb-2">

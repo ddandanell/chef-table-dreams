@@ -3,7 +3,7 @@ import { MessageCircle, Clock, Zap, Award } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-cta text-white">
+    <section className="py-20 bg-foreground text-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -18,7 +18,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-xl"
+              className="bg-white text-foreground hover:bg-white/90 text-lg px-8 py-6 shadow-xl"
             >
               Request Quote
             </Button>

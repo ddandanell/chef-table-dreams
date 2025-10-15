@@ -12,10 +12,10 @@ const PrivacyPolicy = () => {
       <div className="hero bg-base-200 min-h-[60vh] pt-20">
         <div className="hero-content text-center">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
-              <Shield className="w-10 h-10 text-primary" />
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-foreground/10 mb-6">
+              <Shield className="w-10 h-10 text-foreground" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-black mb-6">
+            <h1 className="text-4xl md:text-5xl font-black mb-6">
               Your Privacy Matters
             </h1>
             <p className="py-6 text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -23,19 +23,19 @@ const PrivacyPolicy = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
               <div className="flex flex-col items-center gap-2">
-                <Lock className="w-6 h-6 text-primary" />
+                <Lock className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Encrypted</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Shield className="w-6 h-6 text-primary" />
+                <Shield className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Secure</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Eye className="w-6 h-6 text-primary" />
+                <Eye className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Transparent</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <UserCheck className="w-6 h-6 text-primary" />
+                <UserCheck className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Compliant</span>
               </div>
             </div>

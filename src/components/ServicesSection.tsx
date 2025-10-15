@@ -120,7 +120,7 @@ const ServicesSection = () => {
                     <p className="text-xs text-muted-foreground mb-1">Pricing</p>
                     <p className="text-lg font-bold text-charcoal">{service.pricing}</p>
                   </div>
-                  <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                  <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
                     Learn More
                   </Button>
                 </div>
@@ -133,7 +133,7 @@ const ServicesSection = () => {
           <p className="text-muted-foreground mb-4">
             Need a custom package? We create tailored solutions for your specific needs.
           </p>
-          <Button size="lg" className="bg-gradient-coral hover:opacity-90 shadow-medium">
+          <Button size="lg" className="bg-foreground hover:opacity-90 text-white shadow-medium">
             Request Custom Quote
           </Button>
         </div>

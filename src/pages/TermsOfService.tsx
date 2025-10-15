@@ -13,9 +13,9 @@ const TermsOfService = () => {
         <div className="hero-content text-center">
           <div className="max-w-3xl">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-neutral/10 mb-6">
-              <FileText className="w-10 h-10 text-neutral" />
+              <FileText className="w-10 h-10 text-foreground" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-black mb-6">
+            <h1 className="text-4xl md:text-5xl font-black mb-6">
               Service Excellence, Clearly Defined
             </h1>
             <p className="py-6 text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -23,19 +23,19 @@ const TermsOfService = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
               <div className="flex flex-col items-center gap-2">
-                <Award className="w-6 h-6 text-neutral" />
+                <Award className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Licensed</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Users className="w-6 h-6 text-neutral" />
+                <Users className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Professional</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <CheckCircle className="w-6 h-6 text-neutral" />
+                <CheckCircle className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Reliable</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <FileText className="w-6 h-6 text-neutral" />
+                <FileText className="w-6 h-6 text-foreground" />
                 <span className="text-sm font-medium">Transparent</span>
               </div>
             </div>

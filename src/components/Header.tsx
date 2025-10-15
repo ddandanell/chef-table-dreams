@@ -11,7 +11,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2 text-xl font-black text-foreground tracking-tight group">
-            <ChefHat className="w-8 h-8 text-primary group-hover:text-coral transition-smooth" />
+            <ChefHat className="w-8 h-8 text-foreground group-hover:text-foreground/80 transition-smooth" />
             <span className="font-black">My Chef Do<span className="text-xs align-top">.</span>It</span>
           </a>
           
@@ -47,7 +47,7 @@ const Header = () => {
                 WhatsApp
               </Button>
             </a>
-            <Button className="bg-gradient-coral hover:opacity-90 transition-smooth shadow-medium">
+            <Button className="bg-foreground hover:bg-foreground/90 text-background transition-smooth shadow-medium">
               Request Quote
             </Button>
             

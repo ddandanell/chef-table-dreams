@@ -16,9 +16,9 @@ All colors MUST be HSL.
     --popover: 0 0% 95%;
     --popover-foreground: 0 0% 0%;
     
-    /* Primary - vibrant pink/magenta */
-    --primary: 331 86% 72%;
-    --primary-foreground: 331 20% 14%;
+    /* Primary - black */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
     
     /* Secondary - orange-yellow */
     --secondary: 48 85% 73%;

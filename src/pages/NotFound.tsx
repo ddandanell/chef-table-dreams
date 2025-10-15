@@ -12,8 +12,8 @@ const NotFound = () => {
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="text-9xl font-black text-primary mb-4">404</h1>
-          <h2 className="text-5xl font-bold mb-4">Oops! Page not found</h2>
+          <h1 className="text-7xl font-black text-foreground mb-4">404</h1>
+          <h2 className="text-4xl font-bold mb-4">Oops! Page not found</h2>
           <p className="py-6 text-lg text-muted-foreground">
             The page you're looking for doesn't exist. Let's get you back on track.
           </p>
