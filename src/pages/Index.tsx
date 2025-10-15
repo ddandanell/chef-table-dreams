@@ -1,10 +1,14 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ValueProposition from "@/components/ValueProposition";
+import WhyMyChef from "@/components/WhyMyChef";
+import ServicesSection from "@/components/ServicesSection";
+import CompanyStats from "@/components/CompanyStats";
+import CustomerSegments from "@/components/CustomerSegments";
 import HowItWorks from "@/components/HowItWorks";
-import ChefShowcase from "@/components/ChefShowcase";
 import SocialProof from "@/components/SocialProof";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import { MessageCircle } from "lucide-react";
 
 const Index = () => {
   return (
@@ -12,12 +16,26 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <ValueProposition />
+        <WhyMyChef />
+        <ServicesSection />
+        <CompanyStats />
+        <CustomerSegments />
         <HowItWorks />
-        <ChefShowcase />
         <SocialProof />
+        <CTASection />
       </main>
       <Footer />
+      
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/6282237565997"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[hsl(var(--whatsapp-green))] hover:bg-[hsl(var(--whatsapp-green))]/90 rounded-full flex items-center justify-center shadow-xl transition-smooth hover:scale-110 animate-pulse-subtle"
+        aria-label="Contact us on WhatsApp"
+      >
+        <MessageCircle className="w-7 h-7 text-white" />
+      </a>
     </div>
   );
 };

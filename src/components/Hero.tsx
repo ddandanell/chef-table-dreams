@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { MessageCircle, CheckCircle } from "lucide-react";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
@@ -10,53 +11,32 @@ import hero8 from "@/assets/hero-8.jpg";
 import hero9 from "@/assets/hero-9.jpg";
 
 const Hero = () => {
-  const images = [
-    { src: hero1, className: "row-span-2" },
-    { src: hero2, className: "col-span-1" },
-    { src: hero3, className: "row-span-2" },
-    { src: hero4, className: "col-span-1" },
-    { src: hero5, className: "col-span-1" },
-    { src: hero6, className: "row-span-2" },
-    { src: hero7, className: "col-span-1" },
-    { src: hero8, className: "col-span-1" },
-    { src: hero9, className: "col-span-2" },
-  ];
+  const images = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
 
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden bg-background">
-      {/* Masonry Grid Background */}
-      <div className="absolute inset-0 grid grid-cols-2 md:grid-cols-4 gap-3 p-6 md:p-8 opacity-90">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`${image.className} animate-fade-in overflow-hidden rounded-lg`}
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            <img
-              src={image.src}
-              alt={`Gourmet food ${index + 1}`}
-              className="w-full h-full object-cover transition-smooth hover:scale-105"
-            />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-muted pt-20">
+      <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-4 opacity-30">
+        {images.map((img, index) => (
+          <div key={index} className="relative overflow-hidden rounded-lg animate-fade-in" style={{ animationDelay: `${index * 0.1}s`, gridRow: `span ${Math.floor(Math.random() * 2) + 1}` }}>
+            <img src={img} alt={`Professional service ${index + 1}`} className="w-full h-full object-cover" />
           </div>
         ))}
       </div>
-
-      {/* Content Overlay */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="bg-background/95 backdrop-blur-md rounded-2xl shadow-large p-8 md:p-12 max-w-2xl mx-6 animate-scale-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-charcoal mb-4 text-center">
-            Hire a Private Chef at Home Today
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground text-center mb-8">
-            Enjoy a customized culinary experience with a Private Chef in the comfort of your own home.
-          </p>
-          <div className="flex justify-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-coral hover:opacity-90 transition-smooth shadow-medium text-lg px-8 py-6 animate-pulse-subtle"
-            >
-              Get started
-            </Button>
+      <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="max-w-5xl mx-auto bg-background/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl animate-scale-in">
+          <div className="mb-4"><span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">Since 2018</span></div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-charcoal mb-6 leading-tight">Bali's Premier Hospitality Staffing Excellence</h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-semibold">100+ Trained Professionals | 5-Star Villa Service | Trusted by Bali's Finest Properties</p>
+          <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">From intimate villa dinners to grand events, our uniformed, professional staff deliver luxury hotel standards for your home, property, or celebration.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button size="lg" className="bg-gradient-coral hover:opacity-90 transition-smooth shadow-medium text-lg px-8 py-6">Request Service</Button>
+            <a href="https://wa.me/6282237565997" target="_blank" rel="noopener noreferrer"><Button size="lg" className="bg-[hsl(var(--whatsapp-green))] hover:bg-[hsl(var(--whatsapp-green))]/90 text-white gap-2 text-lg px-8 py-6 w-full sm:w-auto"><MessageCircle className="w-5 h-5" />WhatsApp Us</Button></a>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
+            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">Licensed & Insured</span></div>
+            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">Background-Checked</span></div>
+            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">24/7 Support</span></div>
+            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">500+ Events Annually</span></div>
           </div>
         </div>
       </div>
