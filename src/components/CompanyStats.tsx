@@ -1,12 +1,14 @@
 import { TrendingUp, Users, Calendar, Award, Shield, CheckCircle } from "lucide-react";
+import { GlassCard } from "@/components/ui/glass-card";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 const CompanyStats = () => {
   const stats = [
-    { icon: Calendar, label: "Since", value: "2018" },
-    { icon: Users, label: "Professional Staff", value: "100+" },
-    { icon: TrendingUp, label: "Events Per Year", value: "500+" },
-    { icon: Award, label: "Villa Partnerships", value: "50+" },
-    { icon: CheckCircle, label: "Client Retention", value: "98%" }
+    { icon: Calendar, label: "Operating Since", value: 2018, suffix: "" },
+    { icon: Users, label: "Professional Staff", value: 100, suffix: "+" },
+    { icon: TrendingUp, label: "Events Per Year", value: 500, suffix: "+" },
+    { icon: Award, label: "Villa Partnerships", value: 50, suffix: "+" },
+    { icon: CheckCircle, label: "Client Retention", value: 98, suffix: "%" }
   ];
 
   const certifications = [
@@ -17,58 +19,57 @@ const CompanyStats = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
+    <section className="py-20 bg-gradient-to-br from-primary/5 via-chart-4/5 to-primary/5 relative overflow-hidden">
+      {/* Decorative mesh */}
+      <div className="absolute inset-0 mesh-gradient opacity-40" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Established Excellence
+            <span className="gradient-text-gold">Established</span> Excellence
           </h2>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Years of experience delivering premium hospitality services across Bali
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={index}
-                className="text-center animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <Icon className="w-10 h-10 mx-auto mb-3 opacity-80" />
-                <div className="text-4xl md:text-5xl font-bold mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm opacity-80 uppercase tracking-wide">
-                  {stat.label}
-                </div>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 mb-16">
+          {stats.map((stat, index) => (
+            <GlassCard
+              key={index}
+              className="text-center animate-scale-in p-6"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <stat.icon className="w-10 h-10 mx-auto mb-3 text-primary" />
+              <div className="text-3xl md:text-4xl font-bold mb-2 gradient-text-gold">
+                <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
-            );
-          })}
+              <div className="text-sm text-muted-foreground uppercase tracking-wide">
+                {stat.label}
+              </div>
+            </GlassCard>
+          ))}
         </div>
 
         {/* Certifications */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8">
-            Certifications & Compliance
+          <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in-up">
+            Certifications & <span className="gradient-text-gold">Compliance</span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {certifications.map((cert, index) => {
-              const Icon = cert.icon;
-              return (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 bg-white/10 rounded-lg p-4 backdrop-blur-sm animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Icon className="w-6 h-6 flex-shrink-0" />
-                  <span className="text-sm font-medium">{cert.text}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {certifications.map((cert, index) => (
+              <GlassCard
+                key={index}
+                className="flex items-center gap-3 animate-slide-in-left"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="w-12 h-12 rounded-xl glass-subtle flex items-center justify-center flex-shrink-0">
+                  <cert.icon className="w-6 h-6 text-primary" />
                 </div>
-              );
-            })}
+                <span className="text-sm font-medium">{cert.text}</span>
+              </GlassCard>
+            ))}
           </div>
         </div>
       </div>

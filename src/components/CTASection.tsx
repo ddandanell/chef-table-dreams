@@ -1,57 +1,78 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Clock, Zap, Award } from "lucide-react";
+import { GlassCard } from "@/components/ui/glass-card";
+import { MessageCircle, Clock, Zap, Award, Star } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-foreground text-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Experience My Chef Excellence?
-          </h2>
-          
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Whether it's a villa service program, special event, or personal assistance, 
-            our team is ready to exceed your expectations.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-white text-foreground hover:bg-white/90 text-lg px-8 py-6 shadow-xl"
-            >
-              Request Quote
-            </Button>
-            <a 
-              href="https://wa.me/6282237565997" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
+    <section className="py-20 bg-gradient-to-br from-primary via-chart-1 to-chart-4 relative overflow-hidden">
+      {/* Animated mesh gradient */}
+      <div className="absolute inset-0 mesh-gradient animate-gradient opacity-50" />
+      
+      {/* Decorative orbs */}
+      <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <GlassCard variant="strong" className="text-center p-8 md:p-12">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-6">
+              <Star className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">Start Your Experience</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Experience MyChef Excellence?
+            </h2>
+            
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Whether it's a villa service program, special event, or personal assistance, 
+              our team is ready to exceed your expectations.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <Button 
+                size="lg" 
+                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-xl shine hover:scale-105 transition-all duration-300 group"
+              >
+                <MessageCircle className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                Request Quote
+              </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="bg-[hsl(var(--whatsapp-green))] border-white text-white hover:bg-[hsl(var(--whatsapp-green))]/90 gap-2 text-lg px-8 py-6 w-full sm:w-auto"
+                className="glass-strong border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6 hover:scale-105 transition-all duration-300"
+                asChild
               >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp Us
+                <a 
+                  href="https://wa.me/6282237565997" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WhatsApp Us
+                </a>
               </Button>
-            </a>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span className="text-sm font-medium">Available 24/7</span>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <Zap className="w-5 h-5" />
-              <span className="text-sm font-medium">Rapid Response</span>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto pt-8 border-t border-white/20">
+              {[
+                { icon: Clock, text: "Available 24/7" },
+                { icon: Zap, text: "Rapid Response" },
+                { icon: Award, text: "Professional Service" },
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center justify-center gap-2 group"
+                >
+                  <div className="w-10 h-10 rounded-xl glass-subtle flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-sm font-medium text-white">{item.text}</span>
+                </div>
+              ))}
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <Award className="w-5 h-5" />
-              <span className="text-sm font-medium">Professional Service</span>
-            </div>
-          </div>
+          </GlassCard>
         </div>
       </div>
     </section>

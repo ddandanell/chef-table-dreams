@@ -1,5 +1,5 @@
-import { Home, Calendar, Globe, Flower2, Briefcase } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Home, Calendar, Globe, Flower2, Briefcase, Star } from "lucide-react";
+import { GlassCard } from "@/components/ui/glass-card";
 
 const CustomerSegments = () => {
   const segments = [
@@ -56,50 +56,61 @@ const CustomerSegments = () => {
   ];
 
   return (
-    <section id="who-we-serve" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-4">
-            Serving Bali's Luxury Market
+    <section id="who-we-serve" className="py-20 bg-background relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-chart-4/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-4">
+            <Star className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium">Who We Serve</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Serving Bali's <span className="gradient-text-gold">Luxury Market</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Trusted by diverse clients across the island's premium hospitality sector
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {segments.map((segment, index) => {
-            const Icon = segment.icon;
-            return (
-              <Card
-                key={index}
-                className="p-6 transition-smooth hover:-translate-y-2 hover:shadow-large animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-14 h-14 rounded-xl bg-accent/50 flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-accent-foreground" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {segments.map((segment, index) => (
+            <GlassCard
+              key={index}
+              hover3d
+              className={`group animate-fade-in-up delay-${index * 100}`}
+            >
+              {/* Icon */}
+              <div className="relative w-14 h-14 mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-chart-4 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
+                <div className="relative w-full h-full glass-subtle rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <segment.icon className="w-7 h-7 text-primary" />
                 </div>
-                
-                <h3 className="text-xl font-bold text-charcoal mb-3">
-                  {segment.title}
-                </h3>
-                
-                <p className="text-muted-foreground mb-4">
-                  {segment.description}
-                </p>
-                
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-charcoal">Perfect for:</p>
-                  {segment.perfectFor.map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{item}</span>
+              </div>
+              
+              <h3 className="text-xl font-bold mb-3 group-hover:gradient-text-gold transition-all duration-300">
+                {segment.title}
+              </h3>
+              
+              <p className="text-muted-foreground mb-4">
+                {segment.description}
+              </p>
+              
+              <div className="space-y-2">
+                <p className="text-sm font-semibold">Perfect for:</p>
+                {segment.perfectFor.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full glass-subtle flex items-center justify-center flex-shrink-0">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
                     </div>
-                  ))}
-                </div>
-              </Card>
-            );
-          })}
+                    <span className="text-sm text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </GlassCard>
+          ))}
         </div>
       </div>
     </section>

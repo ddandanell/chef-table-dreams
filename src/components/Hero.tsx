@@ -1,64 +1,105 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, CheckCircle } from "lucide-react";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
-import hero4 from "@/assets/hero-4.jpg";
-import hero5 from "@/assets/hero-5.jpg";
-import hero6 from "@/assets/hero-6.jpg";
-import hero7 from "@/assets/hero-7.jpg";
-import hero8 from "@/assets/hero-8.jpg";
-import hero9 from "@/assets/hero-9.jpg";
+import { GlassCard } from "@/components/ui/glass-card";
+import { GradientText } from "@/components/ui/gradient-text";
+import { MessageCircle, CheckCircle, Award, Clock, Users } from "lucide-react";
+import heroImage from "@/assets/hero-villa-event.jpg";
 
 const Hero = () => {
-  const images = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
-
   return (
-    <div className="hero bg-base-200 min-h-screen relative pt-20" style={{ backgroundImage: `url(${hero1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="hero-overlay bg-opacity-80 bg-black"></div>
-      <div className="hero-content text-center relative z-10">
-        <div className="max-w-4xl">
-          <div className="mb-6">
-            <span className="inline-block px-6 py-2 bg-foreground text-background rounded-full text-sm font-bold mb-4 shadow-lg">Since 2018</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight drop-shadow-lg">
-            Bali's Premier Hospitality Staffing Excellence
-          </h1>
-          <p className="py-6 text-lg md:text-xl text-white max-w-3xl mx-auto font-semibold drop-shadow-md">
-            From intimate villa dinners to grand events, our uniformed, professional staff deliver luxury hotel standards for your home, property, or celebration.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-foreground hover:bg-foreground/90 text-background text-lg px-10 py-7 font-bold shadow-xl">
-              Request Service
-            </Button>
-            <a href="https://wa.me/6282237565997" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-[hsl(var(--whatsapp-green))] hover:bg-[hsl(var(--whatsapp-green))]/90 text-white gap-2 text-lg px-10 py-7 font-bold shadow-xl">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp Us
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated mesh gradient overlay */}
+      <div className="absolute inset-0 mesh-gradient animate-gradient pointer-events-none z-10" />
+      
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroImage} 
+          alt="Luxury villa service" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60" />
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-20 container mx-auto px-4 py-20">
+        <div className="max-w-5xl mx-auto">
+          <GlassCard variant="strong" className="p-8 md:p-12 lg:p-16">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-6 animate-fade-in">
+              <Award className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">Premium Hospitality Services Since 2018</span>
+            </div>
+            
+            {/* Headline with staggered animation */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up delay-100">
+              <GradientText as="span" variant="gold">
+                MyChef
+              </GradientText>
+              {" "}
+              <span className="text-white">
+                Professional Service Team for Your Bali Villa
+              </span>
+            </h1>
+            
+            {/* Description */}
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl animate-fade-in-up delay-200">
+              Premium hospitality staffing for luxury villas, events, and private residences. 
+              Professional chefs, servers, and concierge services delivered with hotel-standard excellence.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up delay-300">
+              <Button 
+                size="lg" 
+                className="shine group hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40"
+              >
+                <MessageCircle className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                Get Instant Quote
               </Button>
-            </a>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/20">
-            <div className="flex items-center justify-center gap-2 text-sm text-white">
-              <CheckCircle className="w-5 h-5 text-white" />
-              <span className="font-medium">Licensed & Insured</span>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="glass border-white/30 text-white hover:bg-white/20 hover:scale-105 transition-all duration-300"
+                asChild
+              >
+                <a 
+                  href="https://wa.me/6282237565997" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WhatsApp Us
+                </a>
+              </Button>
             </div>
-            <div className="flex items-center justify-center gap-2 text-sm text-white">
-              <CheckCircle className="w-5 h-5 text-white" />
-              <span className="font-medium">Background-Checked</span>
+            
+            {/* Trust indicators with animated icons */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/20 animate-fade-in delay-400">
+              {[
+                { icon: Clock, text: "24/7 Availability", color: "text-primary" },
+                { icon: Users, text: "100+ Trained Professionals", color: "text-chart-4" },
+                { icon: CheckCircle, text: "Zero Booking Fees", color: "text-primary" },
+              ].map((item, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center gap-3 group"
+                  style={{ animationDelay: `${500 + index * 100}ms` }}
+                >
+                  <div className="w-12 h-12 rounded-xl glass-subtle flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                  </div>
+                  <span className="text-white font-medium">{item.text}</span>
+                </div>
+              ))}
             </div>
-            <div className="flex items-center justify-center gap-2 text-sm text-white">
-              <CheckCircle className="w-5 h-5 text-white" />
-              <span className="font-medium">24/7 Support</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-sm text-white">
-              <CheckCircle className="w-5 h-5 text-white" />
-              <span className="font-medium">500+ Events Annually</span>
-            </div>
-          </div>
+          </GlassCard>
         </div>
       </div>
-    </div>
+      
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-chart-4/20 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
+    </section>
   );
 };
 
