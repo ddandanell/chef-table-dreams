@@ -10,16 +10,9 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 text-2xl font-bold text-charcoal tracking-tight group">
-            <div className="relative">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary via-coral to-gold flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                <span className="text-2xl font-black text-white tracking-tighter">A</span>
-              </div>
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-2xl">My Chef</span>
-              <span className="text-[10px] text-muted-foreground font-normal tracking-wide">Premium Hospitality</span>
-            </div>
+          <a href="/" className="flex items-center gap-2 text-xl font-black text-foreground tracking-tight group">
+            <ChefHat className="w-8 h-8 text-primary group-hover:text-coral transition-smooth" />
+            <span className="font-black">My Chef Do<span className="text-xs align-top">.</span>It</span>
           </a>
           
           {/* Desktop Navigation */}

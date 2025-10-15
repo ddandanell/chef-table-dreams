@@ -7,14 +7,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary via-coral to-gold flex items-center justify-center shadow-lg">
-                <span className="text-3xl font-black text-white tracking-tighter">A</span>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="text-primary">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 13.87V16c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-2.13c-1.76.41-3.64.64-5.5.64s-3.74-.23-5.5-.64z" fill="currentColor"/>
+                  <path d="M8.5 10.99c-1.93.37-3.61.92-5 1.52V14h16v-1.49c-1.39-.6-3.07-1.15-5-1.52" fill="currentColor"/>
+                  <path d="M12 8c-3.31 0-6 1.12-6 2.5V12c0-.83 2.69-1.5 6-1.5s6 .67 6 1.5v-1.5c0-1.38-2.69-2.5-6-2.5z" fill="currentColor"/>
+                  <path d="M12 2C9.24 2 7 4.24 7 7v1h10V7c0-2.76-2.24-5-5-5z" fill="currentColor"/>
+                </svg>
               </div>
+              <h3 className="text-2xl font-black text-white">My Chef Do<span className="text-xs align-top">.</span>It</h3>
             </div>
-            <h3 className="text-2xl font-bold text-charcoal mb-1">My Chef</h3>
-            <p className="text-xs text-muted-foreground font-medium mb-3">Premium Hospitality</p>
-            <p className="text-muted-foreground text-sm mb-4 max-w-xs">
+            <p className="text-gray-400 text-sm mb-4 max-w-xs">
               Bali's Premier Hospitality Staffing Excellence
             </p>
             <div className="flex gap-4">

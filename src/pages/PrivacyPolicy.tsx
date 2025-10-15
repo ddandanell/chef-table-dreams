@@ -9,39 +9,39 @@ const PrivacyPolicy = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-background to-coral/5 py-20 md:py-32">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6 animate-scale-in">
+      <div className="hero bg-base-200 min-h-[60vh] pt-20">
+        <div className="hero-content text-center">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
               <Shield className="w-10 h-10 text-primary" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-charcoal mb-6 animate-fade-in">
+            <h1 className="text-5xl md:text-6xl font-black mb-6">
               Your Privacy Matters
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <p className="py-6 text-xl text-muted-foreground max-w-2xl mx-auto">
               We protect your data with the same care we bring to your events
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+              <div className="flex flex-col items-center gap-2">
                 <Lock className="w-6 h-6 text-primary" />
                 <span className="text-sm font-medium">Encrypted</span>
               </div>
-              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="flex flex-col items-center gap-2">
                 <Shield className="w-6 h-6 text-primary" />
                 <span className="text-sm font-medium">Secure</span>
               </div>
-              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col items-center gap-2">
                 <Eye className="w-6 h-6 text-primary" />
                 <span className="text-sm font-medium">Transparent</span>
               </div>
-              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="flex flex-col items-center gap-2">
                 <UserCheck className="w-6 h-6 text-primary" />
                 <span className="text-sm font-medium">Compliant</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <main className="container mx-auto px-6 py-16">
         <Card className="max-w-4xl mx-auto p-8 md:p-12 shadow-xl">

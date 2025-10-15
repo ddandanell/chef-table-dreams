@@ -14,33 +14,51 @@ const Hero = () => {
   const images = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-muted pt-20">
-      <div className="absolute inset-0 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 p-4 opacity-30">
-        {images.map((img, index) => (
-          <div key={index} className="relative overflow-hidden rounded-lg animate-fade-in" style={{ animationDelay: `${index * 0.1}s`, gridRow: `span ${Math.floor(Math.random() * 2) + 1}` }}>
-            <img src={img} alt={`Professional service ${index + 1}`} className="w-full h-full object-cover" />
+    <div className="hero bg-base-200 min-h-screen relative pt-20" style={{ backgroundImage: `url(${hero1})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="hero-overlay bg-opacity-70 bg-charcoal"></div>
+      <div className="hero-content text-center relative z-10">
+        <div className="max-w-4xl">
+          <div className="mb-6">
+            <span className="inline-block px-6 py-2 bg-primary/90 text-primary-foreground rounded-full text-sm font-bold mb-4 shadow-lg">Since 2018</span>
           </div>
-        ))}
-      </div>
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-5xl mx-auto bg-background/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl animate-scale-in">
-          <div className="mb-4"><span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">Since 2018</span></div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-charcoal mb-6 leading-tight">Bali's Premier Hospitality Staffing Excellence</h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-semibold">100+ Trained Professionals | 5-Star Villa Service | Trusted by Bali's Finest Properties</p>
-          <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">From intimate villa dinners to grand events, our uniformed, professional staff deliver luxury hotel standards for your home, property, or celebration.</p>
+          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-lg">
+            Bali's Premier Hospitality Staffing Excellence
+          </h1>
+          <p className="py-6 text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-semibold drop-shadow-md">
+            From intimate villa dinners to grand events, our uniformed, professional staff deliver luxury hotel standards for your home, property, or celebration.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-gradient-coral hover:opacity-90 transition-smooth shadow-medium text-lg px-8 py-6">Request Service</Button>
-            <a href="https://wa.me/6282237565997" target="_blank" rel="noopener noreferrer"><Button size="lg" className="bg-[hsl(var(--whatsapp-green))] hover:bg-[hsl(var(--whatsapp-green))]/90 text-white gap-2 text-lg px-8 py-6 w-full sm:w-auto"><MessageCircle className="w-5 h-5" />WhatsApp Us</Button></a>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-7 font-bold shadow-xl">
+              Request Service
+            </Button>
+            <a href="https://wa.me/6282237565997" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-[hsl(var(--whatsapp-green))] hover:bg-[hsl(var(--whatsapp-green))]/90 text-white gap-2 text-lg px-10 py-7 font-bold shadow-xl">
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp Us
+              </Button>
+            </a>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-border">
-            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">Licensed & Insured</span></div>
-            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">Background-Checked</span></div>
-            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">24/7 Support</span></div>
-            <div className="flex items-center justify-center gap-2 text-sm"><CheckCircle className="w-4 h-4 text-primary" /><span className="text-muted-foreground">500+ Events Annually</span></div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/20">
+            <div className="flex items-center justify-center gap-2 text-sm text-white/90">
+              <CheckCircle className="w-5 h-5 text-primary" />
+              <span className="font-medium">Licensed & Insured</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-sm text-white/90">
+              <CheckCircle className="w-5 h-5 text-primary" />
+              <span className="font-medium">Background-Checked</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-sm text-white/90">
+              <CheckCircle className="w-5 h-5 text-primary" />
+              <span className="font-medium">24/7 Support</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-sm text-white/90">
+              <CheckCircle className="w-5 h-5 text-primary" />
+              <span className="font-medium">500+ Events Annually</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
