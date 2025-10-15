@@ -7,18 +7,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="relative">
-                <div className="w-8 h-8 rounded-lg bg-gradient-coral flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">🍳</span>
-                </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-gold flex items-center justify-center">
-                  <span className="text-[8px] font-black text-white">A</span>
-                </div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary via-coral to-gold flex items-center justify-center shadow-lg">
+                <span className="text-3xl font-black text-white tracking-tighter">A</span>
               </div>
-              <h3 className="text-2xl font-bold">My Chef</h3>
             </div>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-2xl font-bold text-charcoal mb-1">My Chef</h3>
+            <p className="text-xs text-muted-foreground font-medium mb-3">Premium Hospitality</p>
+            <p className="text-muted-foreground text-sm mb-4 max-w-xs">
               Bali's Premier Hospitality Staffing Excellence
             </p>
             <div className="flex gap-4">

@@ -1,36 +1,51 @@
-import { ChefHat, ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { FileText, Users, Award, CheckCircle } from "lucide-react";
 
 const TermsOfService = () => {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-white border-b border-border py-6">
+    <div className="min-h-screen">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-navy/5 via-background to-gold/5 py-20 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between">
-            <a href="/" className="flex items-center gap-2 text-2xl font-bold text-charcoal">
-              <div className="relative">
-                <ChefHat className="w-8 h-8 text-primary" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-gold flex items-center justify-center">
-                  <span className="text-[8px] font-black text-white">A</span>
-                </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-navy/10 mb-6 animate-scale-in">
+              <FileText className="w-10 h-10 text-navy" />
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold text-charcoal mb-6 animate-fade-in">
+              Service Excellence, Clearly Defined
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              Our commitment to professional hospitality standards
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <Award className="w-6 h-6 text-navy" />
+                <span className="text-sm font-medium">Licensed</span>
               </div>
-              <span>My Chef</span>
-            </a>
-            <a href="/">
-              <Button variant="outline" className="gap-2">
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </Button>
-            </a>
+              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <Users className="w-6 h-6 text-navy" />
+                <span className="text-sm font-medium">Professional</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <CheckCircle className="w-6 h-6 text-navy" />
+                <span className="text-sm font-medium">Reliable</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                <FileText className="w-6 h-6 text-navy" />
+                <span className="text-sm font-medium">Transparent</span>
+              </div>
+            </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      {/* Content */}
-      <main className="container mx-auto px-6 py-16 max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Terms of Service</h1>
-        <p className="text-muted-foreground mb-8">Last Updated: January 2025</p>
+      <main className="container mx-auto px-6 py-16">
+        <Card className="max-w-4xl mx-auto p-8 md:p-12 shadow-xl">
+          <p className="text-sm text-muted-foreground mb-8">Last Updated: January 2025</p>
 
         <div className="prose prose-lg max-w-none space-y-8">
           {/* Introduction */}
@@ -344,14 +359,10 @@ const TermsOfService = () => {
             </p>
           </section>
         </div>
+      </Card>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-charcoal text-white py-8 mt-16">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-gray-400">&copy; 2018-2025 My Chef Bali. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

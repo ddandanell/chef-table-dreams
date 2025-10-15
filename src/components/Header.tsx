@@ -10,14 +10,16 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 text-2xl font-bold text-charcoal tracking-tight group">
+          <a href="/" className="flex items-center gap-3 text-2xl font-bold text-charcoal tracking-tight group">
             <div className="relative">
-              <ChefHat className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gradient-gold flex items-center justify-center">
-                <span className="text-[8px] font-black text-white">A</span>
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary via-coral to-gold flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                <span className="text-2xl font-black text-white tracking-tighter">A</span>
               </div>
             </div>
-            <span>My Chef</span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-2xl">My Chef</span>
+              <span className="text-[10px] text-muted-foreground font-normal tracking-wide">Premium Hospitality</span>
+            </div>
           </a>
           
           {/* Desktop Navigation */}
