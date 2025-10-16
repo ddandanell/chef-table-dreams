@@ -85,24 +85,8 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Trust indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/30 animate-fade-in delay-400 max-w-4xl mx-auto">
-            {[
-              { icon: Clock, text: "24/7 Availability" },
-              { icon: Users, text: "100+ Trained Professionals" },
-              { icon: CheckCircle, text: "Zero Booking Fees" },
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className="flex flex-col items-center gap-3 group"
-              >
-                <div className="w-16 h-16 rounded-full border-2 border-white/30 bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:border-white/50 transition-all duration-300">
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-                <span className="text-white font-medium text-lg">{item.text}</span>
-              </div>
-            ))}
-          </div>
+          {/* Spacing maintained */}
+          <div className="pt-12"></div>
         </div>
       </div>
     </section>
