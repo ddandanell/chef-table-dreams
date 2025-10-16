@@ -46,12 +46,12 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-4">
             <Star className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">Simple & Seamless</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            The Simple <span className="gradient-text-gold">5-Step</span> Journey
+            The Simple <span className="text-primary">5-Step</span> Journey
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Booking your private chef experience is refreshingly simple
@@ -66,7 +66,6 @@ const HowItWorks = () => {
               <div
                 key={step.number}
                 className="relative animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {/* Mobile connector */}
                 {index < steps.length - 1 && (
@@ -76,19 +75,19 @@ const HowItWorks = () => {
                 {/* Step Card */}
                 <GlassCard hover3d className="relative group">
                   {/* Step Number Badge */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-chart-4 flex items-center justify-center shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
+                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
                     <span className="text-xl font-bold text-white">{step.number}</span>
                   </div>
                   
                   {/* Icon Container */}
                   <div className="mb-6 relative">
-                    <div className="w-20 h-20 mx-auto rounded-2xl glass-subtle flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 mx-auto rounded-2xl bg-card border border-border flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <step.icon className="w-10 h-10 text-primary" />
                     </div>
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-lg font-bold mb-3 text-center min-h-[3rem] flex items-center justify-center group-hover:gradient-text-gold transition-all duration-300">
+                  <h3 className="text-lg font-bold mb-3 text-center min-h-[3rem] flex items-center justify-center group-hover:text-primary transition-all duration-300">
                     {step.title}
                   </h3>
                   
@@ -122,7 +121,7 @@ const HowItWorks = () => {
         </div>
         
         {/* Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '500ms' }}>
+        <div className="text-center mt-16">
           <p className="text-muted-foreground mb-6 text-lg">
             Ready to get started?
           </p>

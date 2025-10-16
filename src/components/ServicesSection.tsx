@@ -11,7 +11,7 @@ const ServicesSection = () => {
       description: "Professional chefs for intimate dinners, daily meal preparation, or special occasions. Custom menus tailored to your preferences.",
       features: ["Custom menu design", "Dietary accommodations", "Market-fresh ingredients", "Full cleanup service"],
       price: "From $45/hour",
-      gradient: "from-primary/10 to-chart-4/10"
+      gradient: "from-primary/10 to-blue-500/10"
     },
     {
       icon: Users,
@@ -19,7 +19,7 @@ const ServicesSection = () => {
       description: "Complete event team including servers, bartenders, and coordinators for weddings, corporate events, and celebrations.",
       features: ["Professional servers", "Experienced bartenders", "Event coordinators", "Setup & breakdown"],
       price: "From $35/hour per staff",
-      gradient: "from-chart-1/10 to-primary/10"
+      gradient: "from-purple-500/10 to-primary/10"
     },
     {
       icon: Utensils,
@@ -27,7 +27,7 @@ const ServicesSection = () => {
       description: "Daily housekeeping, villa management, and hospitality services for rental properties and private residences.",
       features: ["Daily cleaning", "Guest management", "Maintenance coordination", "Concierge services"],
       price: "Custom packages available",
-      gradient: "from-chart-4/10 to-chart-1/10"
+      gradient: "from-blue-500/10 to-purple-500/10"
     },
     {
       icon: Home,
@@ -35,7 +35,7 @@ const ServicesSection = () => {
       description: "Full-service catering for events of any size. From intimate gatherings to large celebrations with complete setup.",
       features: ["Menu planning", "Food preparation", "Service staff", "Equipment rental"],
       price: "Contact for quote",
-      gradient: "from-primary/10 to-chart-2/10"
+      gradient: "from-primary/10 to-green-500/10"
     },
   ];
 
@@ -43,13 +43,13 @@ const ServicesSection = () => {
     <section id="services" className="py-20 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-chart-4/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <ScrollReveal animation="slide-up">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-4">
               <Star className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">Our Services</span>
             </div>
@@ -77,8 +77,8 @@ const ServicesSection = () => {
                 <div className="relative z-10">
                   {/* Icon with 3D effect */}
                   <div className="relative w-16 h-16 mb-6">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-chart-4 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
-                    <div className="relative w-full h-full glass-subtle rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
+                    <div className="relative w-full h-full bg-card border border-border rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="w-8 h-8 text-primary" />
                     </div>
                   </div>
@@ -99,9 +99,8 @@ const ServicesSection = () => {
                       <li 
                         key={idx} 
                         className="flex items-center gap-2 text-sm"
-                        style={{ animationDelay: `${idx * 50}ms` }}
                       >
-                        <div className="w-5 h-5 rounded-full glass-subtle flex items-center justify-center flex-shrink-0">
+                        <div className="w-5 h-5 rounded-full bg-card border border-border flex items-center justify-center flex-shrink-0">
                           <div className="w-2 h-2 rounded-full bg-primary" />
                         </div>
                         <span>{feature}</span>
@@ -129,7 +128,7 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center animate-fade-in-up delay-400">
+        <div className="mt-16 text-center transition-opacity ">
           <GlassCard variant="strong" className="inline-block">
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <div className="text-left">

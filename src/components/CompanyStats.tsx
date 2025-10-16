@@ -19,14 +19,11 @@ const CompanyStats = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-chart-4/5 to-primary/5 relative overflow-hidden">
-      {/* Decorative mesh */}
-      <div className="absolute inset-0 mesh-gradient opacity-40" />
-      
+    <section className="py-20 bg-gradient-to-br from-primary/5 via-blue-50 to-primary/5 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12 animate-fade-in-up">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text-gold">Established</span> Excellence
+            <span className="text-primary">Established</span> Excellence
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Years of experience delivering premium hospitality services across Bali
@@ -38,11 +35,10 @@ const CompanyStats = () => {
           {stats.map((stat, index) => (
             <GlassCard
               key={index}
-              className="text-center animate-scale-in p-6"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="text-center p-6"
             >
               <stat.icon className="w-10 h-10 mx-auto mb-3 text-primary" />
-              <div className="text-3xl md:text-4xl font-bold mb-2 gradient-text-gold">
+              <div className="text-3xl md:text-4xl font-bold mb-2 text-primary">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-sm text-muted-foreground uppercase tracking-wide">
@@ -54,17 +50,16 @@ const CompanyStats = () => {
 
         {/* Certifications */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-8 animate-fade-in-up">
-            Certifications & <span className="gradient-text-gold">Compliance</span>
+          <h3 className="text-2xl font-bold text-center mb-8">
+            Certifications & <span className="text-primary">Compliance</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
               <GlassCard
                 key={index}
-                className="flex items-center gap-3 animate-slide-in-left"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="flex items-center gap-3"
               >
-                <div className="w-12 h-12 rounded-xl glass-subtle flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0">
                   <cert.icon className="w-6 h-6 text-primary" />
                 </div>
                 <span className="text-sm font-medium">{cert.text}</span>
