@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { ChefHat, Users, Utensils, Home, Star } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const ServicesSection = () => {
   const services = [
@@ -46,81 +47,84 @@ const ServicesSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-4">
-            <Star className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Our Services</span>
+        <ScrollReveal animation="slide-up">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-4">
+              <Star className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">Our Services</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Premium Hospitality{" "}
+              <span className="gradient-text-gold">Solutions</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Professional service team for every occasion. Hotel-standard excellence for your villa, event, or residence.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Premium Hospitality{" "}
-            <span className="gradient-text-gold">Solutions</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Professional service team for every occasion. Hotel-standard excellence for your villa, event, or residence.
-          </p>
-        </div>
+        </ScrollReveal>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <GlassCard
-              key={index}
-              hover3d
-              className={`group relative overflow-hidden animate-fade-in-up delay-${index * 100}`}
-            >
-              {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              <div className="relative z-10">
-                {/* Icon with 3D effect */}
-                <div className="relative w-16 h-16 mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-chart-4 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
-                  <div className="relative w-full h-full glass-subtle rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="w-8 h-8 text-primary" />
+            <ScrollReveal key={index} animation="scale" delay={index * 100}>
+              <GlassCard
+                hover3d
+                className="group relative overflow-hidden card-border-animate"
+              >
+                {/* Gradient overlay on hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                
+                <div className="relative z-10">
+                  {/* Icon with 3D effect */}
+                  <div className="relative w-16 h-16 mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-chart-4 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
+                    <div className="relative w-full h-full glass-subtle rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <service.icon className="w-8 h-8 text-primary" />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold mb-2 group-hover:gradient-text-gold transition-all duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Features */}
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <li 
+                        key={idx} 
+                        className="flex items-center gap-2 text-sm"
+                        style={{ animationDelay: `${idx * 50}ms` }}
+                      >
+                        <div className="w-5 h-5 rounded-full glass-subtle flex items-center justify-center flex-shrink-0">
+                          <div className="w-2 h-2 rounded-full bg-primary" />
+                        </div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                    <span className="text-lg font-bold text-primary">
+                      {service.price}
+                    </span>
+                    <Button 
+                      variant="outline" 
+                      className="shine group/btn hover:bg-primary/10 hover:border-primary/30 btn-hover-lift"
+                    >
+                      Learn More
+                      <Star className="w-4 h-4 ml-2 group-hover/btn:rotate-12 transition-transform" />
+                    </Button>
                   </div>
                 </div>
-
-                {/* Content */}
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold mb-2 group-hover:gradient-text-gold transition-all duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Features */}
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li 
-                      key={idx} 
-                      className="flex items-center gap-2 text-sm"
-                      style={{ animationDelay: `${idx * 50}ms` }}
-                    >
-                      <div className="w-5 h-5 rounded-full glass-subtle flex items-center justify-center flex-shrink-0">
-                        <div className="w-2 h-2 rounded-full bg-primary" />
-                      </div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                  <span className="text-lg font-bold text-primary">
-                    {service.price}
-                  </span>
-                  <Button 
-                    variant="outline" 
-                    className="shine group/btn hover:bg-primary/10 hover:border-primary/30"
-                  >
-                    Learn More
-                    <Star className="w-4 h-4 ml-2 group-hover/btn:rotate-12 transition-transform" />
-                  </Button>
-                </div>
-              </div>
-            </GlassCard>
+              </GlassCard>
+            </ScrollReveal>
           ))}
         </div>
 

@@ -344,4 +344,143 @@
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     @apply bg-primary;
   }
+  
+  /* Advanced Button Hover Effects */
+  .btn-hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .btn-hover-lift:hover {
+    @apply -translate-y-1 shadow-xl;
+    box-shadow: 0 10px 25px -5px oklch(var(--primary) / 0.4);
+  }
+  
+  .btn-icon-slide {
+    @apply relative transition-all duration-300;
+  }
+  
+  .btn-icon-slide .icon {
+    @apply transition-transform duration-300;
+  }
+  
+  .btn-icon-slide:hover .icon {
+    @apply translate-x-1;
+  }
+  
+  /* Advanced Card Hover Effects */
+  .card-image-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .card-image-zoom img {
+    @apply transition-transform duration-700 ease-out;
+  }
+  
+  .card-image-zoom:hover img {
+    @apply scale-110;
+  }
+  
+  .card-border-animate {
+    @apply relative;
+  }
+  
+  .card-border-animate::before {
+    content: '';
+    @apply absolute inset-0 rounded-[inherit] p-[2px] opacity-0;
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary)),
+      oklch(var(--chart-4)),
+      oklch(var(--primary))
+    );
+    background-size: 200% 200%;
+    animation: gradient-rotate 3s ease infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card-border-animate:hover::before {
+    @apply opacity-100;
+  }
+  
+  @keyframes gradient-rotate {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  .card-tilt {
+    @apply transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+  
+  .card-tilt:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-5px);
+  }
+  
+  /* Link Hover Animation */
+  .link-underline {
+    @apply relative inline-block;
+  }
+  
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Image Hover Effects */
+  .image-overlay {
+    @apply relative overflow-hidden;
+  }
+  
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .image-overlay:hover::after {
+    opacity: 1;
+  }
+  
+  /* Hide default cursor for custom cursor */
+  @media (min-width: 768px) {
+    body {
+      cursor: none;
+    }
+    
+    a, button, input, textarea, select, [role="button"] {
+      cursor: none;
+    }
+  }
+  
+  /* Show default cursor on mobile/touch devices */
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      cursor: auto !important;
+    }
+    
+    a, button, input, textarea, select, [role="button"] {
+      cursor: pointer !important;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }

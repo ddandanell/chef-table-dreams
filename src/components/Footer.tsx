@@ -44,10 +44,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="/services" className="text-gray-400 hover:text-white transition-smooth">Services</a></li>
-              <li><a href="/about" className="text-gray-400 hover:text-white transition-smooth">About</a></li>
-              <li><a href="/careers" className="text-gray-400 hover:text-white transition-smooth">Careers</a></li>
-              <li><a href="/gift-cards" className="text-gray-400 hover:text-white transition-smooth">Gift Cards</a></li>
+              <li><a href="/services" className="text-gray-400 hover:text-white transition-smooth link-underline">Services</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-white transition-smooth link-underline">About</a></li>
+              <li><a href="/careers" className="text-gray-400 hover:text-white transition-smooth link-underline">Careers</a></li>
+              <li><a href="/gift-cards" className="text-gray-400 hover:text-white transition-smooth link-underline">Gift Cards</a></li>
             </ul>
           </div>
           
@@ -55,10 +55,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
-              <li><a href="/faq" className="text-gray-400 hover:text-white transition-smooth">FAQ</a></li>
-              <li><a href="/contact" className="text-gray-400 hover:text-white transition-smooth">Contact Us</a></li>
-              <li><a href="/privacy-policy" className="text-gray-400 hover:text-white transition-smooth">Privacy Policy</a></li>
-              <li><a href="/terms-of-service" className="text-gray-400 hover:text-white transition-smooth">Terms of Service</a></li>
+              <li><a href="/faq" className="text-gray-400 hover:text-white transition-smooth link-underline">FAQ</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-white transition-smooth link-underline">Contact Us</a></li>
+              <li><a href="/privacy-policy" className="text-gray-400 hover:text-white transition-smooth link-underline">Privacy Policy</a></li>
+              <li><a href="/terms-of-service" className="text-gray-400 hover:text-white transition-smooth link-underline">Terms of Service</a></li>
             </ul>
           </div>
           

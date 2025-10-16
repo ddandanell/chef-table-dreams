@@ -52,10 +52,10 @@ const Header = () => {
                 key={link.name}
                 to={link.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg font-medium transition-all duration-300 hover-underline",
+                  "px-4 py-2 rounded-lg transition-all duration-300 font-medium link-underline",
                   isActive(link.href)
-                    ? "text-white" 
-                    : "text-white/70 hover:text-white"
+                    ? "text-primary"
+                    : "text-white hover:text-primary"
                 )}
               >
                 {link.name}
