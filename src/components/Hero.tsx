@@ -42,11 +42,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 py-20">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
+          {/* Badge - Hidden but maintains spacing */}
           <ScrollReveal animation="fade" delay={0}>
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/30 bg-black/30 backdrop-blur-sm mb-8">
-              <Award className="w-5 h-5 text-white" />
-              <span className="text-sm font-medium text-white">Premium Hospitality Services Since 2018</span>
+            <div className="mb-8 h-12">
+              {/* Space reserved for future content */}
             </div>
           </ScrollReveal>
           
