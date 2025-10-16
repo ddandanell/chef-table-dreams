@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 bg-background shadow-md transition-all duration-500 py-4 border-b border-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-black shadow-md transition-all duration-500 py-4 border-b border-white/20"
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
@@ -33,10 +33,10 @@ const Header = () => {
             to="/" 
             className="flex items-center space-x-3 group"
           >
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-gradient-to-br from-primary to-chart-4">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-white/10">
               <ChefHat className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold gradient-text-gold">
+            <span className="text-2xl font-bold text-white">
               MyChef
             </span>
           </Link>
@@ -50,8 +50,8 @@ const Header = () => {
                 className={cn(
                   "px-4 py-2 rounded-lg font-medium transition-all duration-300 hover-underline",
                   isActive(link.href)
-                    ? "text-foreground" 
-                    : "text-foreground/70 hover:text-foreground"
+                    ? "text-white" 
+                    : "text-white/70 hover:text-white"
                 )}
               >
                 {link.name}
@@ -78,13 +78,13 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-muted/50"
+            className="md:hidden w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/10"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="w-5 h-5 text-foreground" />
+              <X className="w-5 h-5 text-white" />
             ) : (
-              <Menu className="w-5 h-5 text-foreground" />
+              <Menu className="w-5 h-5 text-white" />
             )}
           </button>
         </nav>
