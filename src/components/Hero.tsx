@@ -48,14 +48,10 @@ const Hero = () => {
           </div>
           
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up delay-100">
-            <GradientText as="span" variant="gold">
-              MyChef
-            </GradientText>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 animate-fade-in-up delay-100 text-white">
+            MyChef
             <br />
-            <span className="text-white">
-              Professional Service Team for Your Bali Villa
-            </span>
+            Professional Service Team for Your Bali Villa
           </h1>
           
           {/* Description */}
