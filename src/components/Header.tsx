@@ -9,10 +9,14 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Why Us", href: "#why-us" },
-    { name: "How It Works", href: "#how-it-works" },
-    { name: "Who We Serve", href: "#who-we-serve" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
+    { name: "How It Works", href: "/how-it-works" },
+    { name: "Who We Serve", href: "/who-we-serve" },
+    { name: "Careers", href: "/careers" },
+    { name: "Gift Cards", href: "/gift-cards" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -43,10 +47,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.slice(0, 4).map((link) => (
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className={cn(
                   "px-4 py-2 rounded-lg font-medium transition-all duration-300 hover-underline",
                   isActive(link.href)
@@ -55,7 +59,7 @@ const Header = () => {
                 )}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -65,13 +69,7 @@ const Header = () => {
               className="bg-white text-foreground border border-border hover:bg-white/90 transition-all duration-300"
               asChild
             >
-              <a href="#services">View Services</a>
-            </Button>
-            <Button 
-              className="bg-white text-foreground border border-border hover:bg-white/90 group hover:scale-105 transition-all duration-300"
-            >
-              <MessageCircle className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-              Book Now
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -94,9 +92,9 @@ const Header = () => {
           <div className="md:hidden mt-4 glass-strong rounded-2xl p-6 animate-fade-in-up">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
                     "px-4 py-3 rounded-lg font-medium transition-all duration-300",
@@ -106,25 +104,8 @@ const Header = () => {
                   )}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-              <div className="pt-4 space-y-3 border-t border-border/50">
-                <Button 
-                  variant="outline" 
-                  className="w-full"
-                  onClick={() => setMobileMenuOpen(false)}
-                  asChild
-                >
-                  <a href="#services">View Services</a>
-                </Button>
-                <Button 
-                  className="w-full group"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <MessageCircle className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
-                  Book Now
-                </Button>
-              </div>
             </div>
           </div>
         )}
