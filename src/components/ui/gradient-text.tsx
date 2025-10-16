@@ -7,18 +7,12 @@ interface GradientTextProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const GradientText = React.forwardRef<HTMLElement, GradientTextProps>(
-  ({ className, as: Component = "span", variant = "default", ...props }, ref) => {
-    const variantClasses = {
-      default: "gradient-text",
-      gold: "gradient-text-gold",
-    };
-
+  ({ className, as: Component = "span", ...props }, ref) => {
     return (
       <Component
         ref={ref as any}
         className={cn(
-          variantClasses[variant],
-          "font-bold",
+          "font-bold text-primary",
           className
         )}
         {...props}

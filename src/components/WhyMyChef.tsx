@@ -32,7 +32,7 @@ const WhyMyChef = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-subtle mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-4">
             <Award className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium">Why Choose Us</span>
           </div>
@@ -53,13 +53,13 @@ const WhyMyChef = () => {
             >
               {/* Icon with gradient background */}
               <div className="relative w-14 h-14 mb-6">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-chart-4 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
-                <div className="relative w-full h-full glass-subtle rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-500 rounded-xl rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
+                <div className="relative w-full h-full bg-card border border-border rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
               </div>
               
-              <h3 className="text-xl font-bold mb-2 group-hover:gradient-text-gold transition-all duration-300">
+              <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-all duration-300">
                 {item.title}
               </h3>
               <p className="text-muted-foreground">
