@@ -37,7 +37,7 @@ const WhyMyChef = () => {
             <span className="text-sm font-medium">Why Choose Us</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            The <span className="gradient-text-gold">MyChef</span> Difference
+            The <span className="text-black">MyChef</span> Difference
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We're not a freelance marketplace. We're a professional company delivering hotel-standard service to your private space.
