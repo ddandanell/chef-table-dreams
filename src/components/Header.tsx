@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 z-50 bg-black shadow-md transition-all duration-500 py-4 border-b border-white/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-black shadow-md transition-all py-4 border-b border-white/20"
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
@@ -37,7 +37,7 @@ const Header = () => {
             to="/" 
             className="flex items-center space-x-3 group"
           >
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-white/10">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all bg-white/10">
               <ChefHat className="w-6 h-6 text-white" />
             </div>
             <span className="text-2xl font-bold text-white">
@@ -52,7 +52,7 @@ const Header = () => {
                 key={link.name}
                 to={link.href}
                 className={cn(
-                  "px-4 py-2 rounded-lg transition-all duration-300 font-medium link-underline",
+                  "px-4 py-2 rounded-lg transition-all font-medium",
                   isActive(link.href)
                     ? "text-primary"
                     : "text-white hover:text-primary"
@@ -66,7 +66,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <Button 
-              className="bg-white text-foreground border border-border hover:bg-white/90 transition-all duration-300"
+              className="bg-white text-foreground border border-border hover:bg-white/90 transition-all"
               asChild
             >
               <Link to="/contact">Contact Us</Link>
@@ -76,7 +76,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-white/10"
+            className="md:hidden w-10 h-10 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -89,7 +89,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-strong rounded-2xl p-6 animate-fade-in-up">
+          <div className="md:hidden mt-4 bg-card/90 backdrop-blur-sm rounded-lg border border-border p-6">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
@@ -97,7 +97,7 @@ const Header = () => {
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-3 rounded-lg font-medium transition-all duration-300",
+                    "px-4 py-3 rounded-lg font-medium transition-all",
                     isActive(link.href)
                       ? "bg-primary/10 text-primary"
                       : "hover:bg-muted/50"
