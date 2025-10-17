@@ -1,0 +1,15 @@
+{
+  "$schema": "https://jsrepo.dev/schema.json",
+  "version": "1.0.0",
+  "formatter": "prettier",
+  "blocks": "./src/blocks",
+  "registries": [
+    {
+      "alias": "@ieedan/std",
+      "url": "github/ieedan/std",
+      "paths": {
+        "ts": "./src/blocks/ts"
+      }
+    }
+  ]
+}
