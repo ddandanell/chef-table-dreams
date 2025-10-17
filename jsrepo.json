@@ -1,0 +1,11 @@
+{
+  "$schema": "https://unpkg.com/jsrepo@1.47.0/schemas/project-config.json",
+  "formatter": "prettier",
+  "paths": {
+    "*": "./src/blocks",
+    "ts": "./src/blocks/ts"
+  },
+  "repos": [
+    "@ieedan/std"
+  ]
+}
